@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einar Viðar</title>
+    <link rel="stylesheet" href="portfolio_new.css">
+    <!-- <link rel="stylesheet" media="screen and (max-width:800px)" href="tablet.css">
+    <link rel="stylesheet" media="screen and (max-width:530px)" href="phone.css"> -->
+    <!-- <script type="javascript" src="portfolio_new.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+</head>
+
+<body>
+  <!-- <div class="floating-image"></div> -->
+  <div class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+    <div class="main-content">
+
+    <section id="home">
+        <div class="main">
+            <h1 class="heading">EINAR VIÐAR GUÐMUNDSSON THORODDSEN</h1>
+        </div>
+    </section>
+
+    <section id="about">
+        <div id="pic">
+            <img src="content/images/einar-1.jpg" alt="">
+            <div id="intro">
+                <p>Einar is an Icelandic born graphic designer, visual artist, and illustrator based in The Hague. His playful style strikes an equilibrium between humour and seriousness, and his primary interests lie in print-making, illustration, and creating psychedelic explosions of colour. Einar draws inspiration from his surroundings—always searching for and creating textures, observing people's mannerisms, and embracing the imperfections of weathered or destroyed objects—for his printed works. Einar believes in the joy of continuous creation, even in failure, as that's where things get interesting.</p>
+            
+            </div>
+        
+    </section>
+
+    <section id="portfolio">
+        <h2 class="headings">Projects, drawings, books, zines, posters, prints...</h2>
+        <br>
+        <p class="portp">A collection of projects and works from 2021 to 2023, either from school, applications, freelance or of my own interests or pursuits.
+          Collaboration is a key aspect in some of these projects, and I hope to keep collaborating with as many different interesting individuals as I possibly can.</p>
+        <div class="gallery">
+            <!-- Add an image with a class "gallery-image" for each project -->
+            <img src="content/images/intuition_intermission/intuition.png" alt="" class="gallery-image" data-modal-images="modalgraduation">
+            <img src="content/images/publications/rdf/rdf_1.png" alt="" class="gallery-image" data-modal-images="modal1">
+            <img src="content/images/publications/destructors/cover.png" alt="" class="gallery-image" data-modal-images="modal2">
+            <img src="content/images/publications/bdbd/bdbd_cover.png" alt="" class="gallery-image" data-modal-images="modal3">
+            <img src="content/images/publications/movement/covers-together.png" alt="" class="gallery-image" data-modal-images="modal11">
+            <img src="content/images/posters/leiden.png" alt="" class="gallery-image" data-modal-images="modal4">
+            <img src="content/images/posters/simtal.png" alt="" class="gallery-image" data-modal-images="modal5">
+            <img src="content/images/posters/sockpuppet.png" alt="" class="gallery-image" data-modal-images="modal6">
+            <img src="content/images/brochure/cover.png" alt="" class="gallery-image" data-modal-images="modal7">
+            <img src="content/images/type_design/crypteque/crypteque.png" alt="" class="gallery-image" data-modal-images="modal8">
+            <img src="content/images/type_design/rootn/rootn_front.png" alt="" class="gallery-image" data-modal-images="modal9">
+            <img src="content/images/type_design/ant_serif/neue-ant.png" alt="" class="gallery-image" data-modal-images="modal17">
+            <img src="content/images/identity/valse_front.png" alt="" class="gallery-image" data-modal-images="modal10">
+            <img src="content/images/illustrations/sketchbook/sketchbook.png" alt="" class="gallery-image" data-modal-images="modal12">
+            <img src="content/images/prints/beautiful_object/object.png" alt="" class="gallery-image" data-modal-images="modal13">
+            <img src="content/images/posters/concertposter/concertposter.png" alt="" class="gallery-image" data-modal-images="modal14">
+            <img src="content/images/textures/texture.png" alt="" class="gallery-image" data-modal-images="modal15">
+            <img src="content/images/publications/texture/texturebook.png" alt="" class="gallery-image" data-modal-images="modal16">
+            <!-- Add more images here -->
+        </div>
+        <!-- Modal container -->
+    <!-- The modal container -->
+    <div id="modal-container">
+        <span class="close-btn">&times;</span>
+        <!-- Navigation buttons outside the modal-content div -->
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+        <div class="modal-content">
+          <!-- Image container inside the modal -->
+          <div class="modal-image-container">
+            <img id="modal-image" src="" alt="">
+          </div>
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+document.addEventListener( 'DOMContentLoaded', ( ) => {
+
+document.addEventListener( 'mousedown', ( ) => {
+  document.body.classList.add( 'mousepressed' );
+} );
+document.addEventListener( 'mouseup', ( ) => {
+  document.body.classList.remove( 'mousepressed' );
+} );
+} );
+
+function toggleMenu() {
+  var navLinks = document.getElementById("navLinks");
+  navLinks.classList.toggle("nav-active");
+}
+
+        $(document).ready(function() {
+  var modalImages = {
+    modal1: ['content/images/publications/rdf/rdf_1.png', 
+             'content/images/publications/rdf/rdf_2.png', 
+             'content/images/publications/rdf/rdf_3.png', 
+             'content/images/publications/rdf/rdf_4.png', 
+             'content/images/publications/rdf/rdf_5.png', 
+             'content/images/publications/rdf/rdf_6.png', 
+             'content/images/publications/rdf/rdf_7.png'],
+    modal2: ['content/images/publications/destructors/cover.jpg',
+             'content/images/publications/destructors/destructors_1.jpg', 
+             'content/images/publications/destructors/destructors_2.jpg', 
+             'content/images/publications/destructors/destructors_3.jpg', 
+             'content/images/publications/destructors/destructors_4.jpg', 
+             'content/images/publications/destructors/destructors_5.jpg'],
+    modal3: ['content/images/publications/bdbd/bdbd_cover.png',
+             'content/images/publications/bdbd/bdbd1.png',
+             'content/images/publications/bdbd/bdbd2.png',
+             'content/images/publications/bdbd/bdbd3.png',
+             'content/images/publications/bdbd/bdbd4.png',
+             'content/images/publications/bdbd/bdbd5.png',
+             ],
+     modal4: ['content/images/posters/leiden.jpg'],
+     modal5: ['content/images/posters/simtal.jpg'],
+     modal6: ['content/images/posters/sockpuppet.jpg'],
+     modal7: ['content/images/brochure/front.png',
+              'content/images/brochure/middle.jpg', 
+              'content/images/brochure/back.png',],
+     modal8: ['content/images/type_design/crypteque/crypteque1.jpg',
+     'content/images/type_design/crypteque/crypteque2.jpg',
+     'content/images/type_design/crypteque/crypteque3.jpg',
+     'content/images/type_design/crypteque/crypteque4.jpg'
+              ],
+              modal9: ['content/images/type_design/rootn/rootn_front.jpg',
+     'content/images/type_design/rootn/rootn1.jpg',
+     'content/images/type_design/rootn/rootn2.jpg',
+     'content/images/type_design/rootn/rootn3.jpg',
+     'content/images/type_design/rootn/rootn4.jpg',
+              ],
+      modal10: ['content/images/identity/valse1.jpg',
+      'content/images/identity/valse2.jpg'],
+      modal11: ['content/images/publications/movement/books_together1.png', 
+             'content/images/publications/movement/books_together2.png', 
+             'content/images/publications/movement/books_together3.png', 
+             'content/images/publications/movement/books_together4.png', 
+             'content/images/publications/movement/books_together5.png', 
+             'content/images/publications/movement/books_together6.png', 
+             ],
+             modal12: ['content/images/illustrations/sketchbook/sketchbook1.jpg', 
+             'content/images/illustrations/sketchbook/sketchbook2.jpg', 
+             'content/images/illustrations/sketchbook/sketchbook3.jpg', 
+             'content/images/illustrations/sketchbook/sketchbook4.jpg', 
+             'content/images/illustrations/sketchbook/sketchbook5.jpg', 
+             'content/images/illustrations/sketchbook/sketchbook6.jpg',
+             'content/images/illustrations/sketchbook/sketchbook7.jpg'
+             ],
+      modal13: ['content/images/prints/beautiful_object/object-1.png',
+      'content/images/prints/beautiful_object/object-2.png',
+      'content/images/prints/beautiful_object/object-3.png',
+      'content/images/prints/beautiful_object/object-4.png'],
+      modal14: ['content/images/posters/concertposter/concertposter-1.jpg',
+      'content/images/posters/concertposter/concertposter-2.jpg',
+      'content/images/posters/concertposter/concertposter-3.jpg',
+      'content/images/posters/concertposter/concertposter-4.jpg',
+      'content/images/posters/concertposter/concertposter-5.jpg',
+      'content/images/posters/concertposter/concertposter-6.jpg',
+      'content/images/posters/concertposter/concertposter-7.jpg',],
+      modal15: ['content/images/textures/texture-1.jpg',
+                'content/images/textures/texture-2.jpg',
+                'content/images/textures/texture-3.jpg',
+                'content/images/textures/texture-4.jpg',
+                'content/images/textures/texture-5.jpg',
+                'content/images/textures/texture-6.jpg',
+                'content/images/textures/texture-7.jpg',
+                'content/images/textures/texture-8.jpg',
+                'content/images/textures/texture-9.jpg',
+                'content/images/textures/texture-10.jpg',
+                'content/images/textures/texture-11.jpg',
+                'content/images/textures/texture-12.jpg',
+                'content/images/textures/texture-13.jpg',
+                'content/images/textures/texture-14.jpg',
+                'content/images/textures/texture-15.jpg',
+                'content/images/textures/texture-16.jpg',
+                'content/images/textures/texture-17.jpg',
+                'content/images/textures/texture-18.jpg',],
+                modal16: ['content/images/publications/texture/texturebook1.jpg',
+                'content/images/publications/texture/texturebook2.jpg',
+                'content/images/publications/texture/texturebook4.jpg',
+                'content/images/publications/texture/texturebook5.jpg',
+                'content/images/publications/texture/texturebook6.jpg',
+                'content/images/publications/texture/texturebook7.jpg',
+                'content/images/publications/texture/texturebook8.jpg',],
+                modal17: ['content/images/type_design/ant_serif/ant-1.jpg',
+                'content/images/type_design/ant_serif/ant-2.jpg',
+                'content/images/type_design/ant_serif/ant-3.jpg',
+                'content/images/type_design/ant_serif/ant-4.jpg',
+                'content/images/type_design/ant_serif/ant-5.jpg',
+                ],
+
+      modalhidden: ['content/images/contact_card.jpeg',
+      'content/images/business_card/business.png',
+      'content/images/business_card/business2.png',
+      'content/images/business_card/business3.png',
+      'content/images/business_card/business4.png',
+    ]
+
+    // Add more project identifiers and modal images as needed
+  };
+
+  var currentModalImagesKey = '';
+  var currentModalIndex = 0;
+
+  function updateModalImage() {
+    var imgSrc = modalImages[currentModalImagesKey][currentModalIndex];
+    $('#modal-image').attr('src', imgSrc);
+  }
+
+  $('.gallery-image').click(function() {
+    currentModalImagesKey = $(this).data('modal-images');
+    currentModalIndex = 0;
+    updateModalImage();
+    $('#modal-container').css('display', 'flex');
+    $('.prev-btn').hide();
+    $('.next-btn').toggle(currentModalIndex < modalImages[currentModalImagesKey].length - 1);
+  });
+
+  function showPreviousImage() {
+    if (currentModalIndex > 0) {
+      currentModalIndex--;
+      updateModalImage();
+    }
+    $('.prev-btn').toggle(currentModalIndex > 0);
+    $('.next-btn').toggle(currentModalIndex < modalImages[currentModalImagesKey].length - 1);
+  }
+
+  function showNextImage() {
+    if (currentModalIndex < modalImages[currentModalImagesKey].length - 1) {
+      currentModalIndex++;
+      updateModalImage();
+    }
+    $('.prev-btn').toggle(currentModalIndex > 0);
+    $('.next-btn').toggle(currentModalIndex < modalImages[currentModalImagesKey].length - 1);
+  }
+
+  $('.prev-btn').click(function() {
+    showPreviousImage();
+  });
+
+  $('.next-btn').click(function() {
+    showNextImage();
+  });
+
+  $('.close-btn').click(function() {
+    $('#modal-container').css('display', 'none');
+    currentModalIndex = 0;
+    currentModalImagesKey = '';
+  });
+});
+
+
+// function getRandomPosition() {
+//     var screenWidth = window.innerWidth;
+//     var screenHeight = window.innerHeight;
+//     var randomX = Math.floor(Math.random() * (screenWidth - 50)); // 50 is the image width
+//     var randomY = Math.floor(Math.random() * (screenHeight - 50)); // 50 is the image height
+
+//     return { x: randomX, y: randomY };
+//   }
+
+//   function updatePosition() {
+//     var position = getRandomPosition();
+//     var floatingImage = document.querySelector('.floating-image');
+//     floatingImage.style.left = position.x + 'px';
+//     floatingImage.style.top = position.y + 'px';
+//   }
+
+//   // Call the updatePosition function at regular intervals (e.g., every 3 seconds)
+//   setInterval(updatePosition, 1000);
+
+
+  // JavaScript code to add 'scrolled' class to the body when scrolling
+  window.addEventListener('scroll', function () {
+      if (window.scrollY > 0) {
+        document.body.classList.add('scrolled');
+      } else {
+        document.body.classList.remove('scrolled');
+      }
+    });
+
+
+    </script>
+<br>
+<br>
+<section id="info">
+  <h3 class="headings">Education</h3>
+  <div id="education">
+      <div id="intro">
+          <p class="schools"><u>DEN SKANDINAVISKE DESIGNHØJSKOLE</u> (Denmark) {Graphic Design} ---> Autumn 2017</p>
+          <br>
+          <p class="schools"><u>REYKJAVÍK SCHOOL OF VISUAL ARTS</u> (Iceland) {Prepatory Year} ---> 2018 - 2019</p>
+          <br>
+          <p class="schools"><u>THE ROYAL ACADEMY OF ART IN THE HAGUE</u> (Netherlands) {BA Graphic Design} ---> 2019 - 2023</p>
+      </div>
+  </div>
+
+  <br>
+
+  <h3 class="headings">Internship</h3>
+  <div id="education">
+      <div id="intro">
+          <p class="internship"> <u>PRINT&FRIENDS</u> > Intern at Print&Friends, a fluid printing house & collective run by Sigurður Atli Sigurðsson and Leifur Ýmir Eyjólfsson in Reykjavík, Iceland > 24th of August - 30th of November</p>
+      </div>
+  </div>
+
+  <br>
+
+  <h3 class="headings">Shows/participations</h3>
+  <div id="participations">
+      <div id="intro">
+          <p class="shows">EXHIBITION: "Trimblur á tromblunum I" > The Old Fishmarket, Flateyri (Iceland) > 26th of June 2021</p>
+          <br>
+          <p class="shows">EXHIBITION: "UNGUR NEMUR, GAMALL TEMUR" > Outvert Art Space, Ísafjörður (Iceland) > 16th of July - 25th of August 2021</p>
+          <br>
+          <p class="shows">CATALOGUE: "Best Dutch Book Design Student Catalogue for the selection of 2021" > Stedelijk Museum, Amsterdam (Netherlands) > October 8th - 6th of November 2022</p>
+          <br>
+          <p class="shows">CURATION: "Valse Triste" > Outvert Art Space & Aðalstræti 22, Ísafjörður (Iceland) > 1st of August - 17th of September 2022</p>
+          <br>
+          <P class="shows">PARTICIPANT/INTERN: "Chart Art Fair" > Charlottenborg, Copenhagen (Denmark) > 26th of August - 28th of August 2022 </P>
+          <br>
+          <p class="shows">EXHIBITION: "Jólagestir Gallery Port & Laufabrauð" > Gallery Port, Reykjavík (Iceland) > 3rd of December 2022 - 3 of January 2023</p>
+          <br>
+          <p class="shows">EXHIBITION: "Graduation Show 2023" > The Royal Academy of Art, The Hague (Netherlands) > 30th of June - 4th of July 2023</p>
+      </div>
+  </div>
+
+</section>
+
+<section id="contact">
+  <h3 class="ending">Contact Information</h3>
+    <p class="busi">Please don't hesitate to contact me for any inquiries, questions, collaborations, comissions or whatever comes to mind!</p>
+    <br>
+<div id="bpic">
+  <img src="content/images/contact_card.png" alt="" class="gallery-image" data-modal-images="modalhidden">
+</div>
+</section>
+</body>
+</html>
